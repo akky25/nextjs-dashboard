@@ -7,8 +7,6 @@ const fetchCacheInvoicesPages = unstable_cache(async (query: string) =>
 );
 
 export default async function PaginationWrap({ query }: { query: string }) {
-  console.log("server rendering", "PagiantionWrap");
-
   const totalPages = await fetchCacheInvoicesPages(query);
 
   return <Pagination totalPages={totalPages} />;
